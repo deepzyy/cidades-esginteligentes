@@ -1,0 +1,18 @@
+# Build e cache
+bin/
+obj/
+.vs/
+
+# Configurações de usuário
+*.user
+*.suo
+
+# Docker
+*.env
+.env
+
+# Logs
+*.log
+
+# Outras pastas temporárias
+FileContentIndex/

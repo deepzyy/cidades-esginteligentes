@@ -1,0 +1,6 @@
+@WebService.Cap7_HostAddress = http://localhost:5047
+
+GET {{WebService.Cap7_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
