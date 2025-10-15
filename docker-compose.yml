@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  webservice:
+    build: .
+    container_name: cidades_api
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=CidadesDB;User Id=sa;Password=YourStrong!Passw0rd;
+    depends_on:
+      - db
+    networks:
+      - cidades_network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: cidades_db
+    environment:
+      - SA_PASSWORD=YourStrong!Passw0rd
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    volumes:
+      - cidades_data:/var/opt/mssql
+    networks:
+      - cidades_network
+
+volumes:
+  cidades_data:
+
+networks:
+  cidades_network:
+    driver: bridge
