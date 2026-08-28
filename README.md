@@ -1,4 +1,4 @@
-Aqui está o texto para copiar:
+
 
 # Projeto - Cidades ESGInteligentes
 
